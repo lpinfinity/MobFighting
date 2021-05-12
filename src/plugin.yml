@@ -1,0 +1,5 @@
+name: MobFighting
+version: 1.0
+author: Micaiah Landis
+main: dev.terra.terramobfighting.Main
+api-version: 1.14

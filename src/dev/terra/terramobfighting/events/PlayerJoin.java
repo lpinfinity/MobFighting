@@ -17,7 +17,6 @@ import org.bukkit.scheduler.BukkitTask;
 public class PlayerJoin implements Listener {
 
     private final Main main;
-    PlayerJoin plugin;
 
     public PlayerJoin(Main main) {
         this.main = main;
@@ -34,28 +33,28 @@ public class PlayerJoin implements Listener {
             Bukkit.getServer().broadcastMessage(ChatColor.GREEN + "Mob Fighting Round one Starting in 5 seconds");
 
 
-            Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) plugin, new Runnable() {
+            Bukkit.getScheduler().scheduleSyncDelayedTask(main, new Runnable() {
                 @Override
                 public void run() {
                     Bukkit.broadcastMessage("Mob Fighting Round one Starting in 4 seconds");
                 }
             }, 20L);
 
-            Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) plugin, new Runnable() {
+            Bukkit.getScheduler().scheduleSyncDelayedTask(main, new Runnable() {
                 @Override
                 public void run() {
                     Bukkit.broadcastMessage("Mob Fighting Round one Starting in 3 seconds");
                 }
             }, 40L);
 
-            Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) plugin, new Runnable() {
+            Bukkit.getScheduler().scheduleSyncDelayedTask(main, new Runnable() {
                 @Override
                 public void run() {
                     Bukkit.broadcastMessage("Mob Fighting Round one Starting in 2 seconds");
                 }
             }, 60L);
 
-            Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) plugin, new Runnable() {
+            Bukkit.getScheduler().scheduleSyncDelayedTask(main, new Runnable() {
                 @Override
                 public void run() {
                     Bukkit.broadcastMessage("Mob Fighting Round one Starting in 1 seconds");

@@ -19,6 +19,8 @@ public class Start extends BukkitRunnable {
     PlayerJoin plugin;
     Main main;
 
+    Boolean test = true;
+
     public Start(PlayerJoin plugin) {
         this.plugin = plugin;
     }
@@ -66,17 +68,16 @@ public class Start extends BukkitRunnable {
 
         long amount = Bukkit.getServer().getWorld("world").getLivingEntities().stream().map(LivingEntity::getCustomName).count();
 
-        if (String.valueOf(amount) == "0") {
-
-            //BukkitTask RoundTwo = new RoundTwo(this).runTaskLater(, 20L);
-
-            Bukkit.getScheduler().scheduleSyncDelayedTask(main, new Runnable() {
-                @Override
-                public void run() {
-                    Bukkit.broadcastMessage("HEllO");
-                }
-            }, 20L);
-
+        while(test) {
+            if(String.valueOf(amount) == "0") {
+                Bukkit.getScheduler().scheduleSyncDelayedTask(main, new Runnable() {
+                    @Override
+                    public void run() {
+                        Bukkit.broadcastMessage("HEllO");
+                    }
+                }, 20L);
+                test = false;
+            }
         }
 
     }

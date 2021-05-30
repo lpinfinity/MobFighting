@@ -14,9 +14,9 @@ public class SpawnMobs implements Listener {
     @EventHandler
     public static void onPlayerTeleport(PlayerTeleportEvent event) {
 
-        Bukkit.getServer().broadcastMessage(ChatColor.GREEN + "Spawning Zombies!");
-        Location location = new Location(Bukkit.getWorld("world"), 0, 100, 0);
-        location.getWorld().spawnEntity(location,EntityType.ZOMBIE);
+        //Bukkit.getServer().broadcastMessage(ChatColor.GREEN + "Spawning Zombies!");
+        //Location location = new Location(Bukkit.getWorld("world"), 0, 100, 0);
+        //location.getWorld().spawnEntity(location,EntityType.ZOMBIE);
 
     }
 

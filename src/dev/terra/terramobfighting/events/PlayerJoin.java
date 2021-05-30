@@ -1,7 +1,7 @@
 package dev.terra.terramobfighting.events;
 
 import dev.terra.terramobfighting.Main;
-import dev.terra.terramobfighting.Tasks.Start;
+import dev.terra.terramobfighting.Tasks.*;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
@@ -29,7 +29,12 @@ public class PlayerJoin implements Listener {
 
         if(Bukkit.getServer().getOnlinePlayers().size() == 2) {
 
-            Bukkit.getServer().broadcastMessage(ChatColor.GREEN + "Mob Fighting Round one Starting!");
+            Bukkit.getServer().broadcastMessage(ChatColor.GREEN + "Mob Fighting Round one Starting in 5 seconds");
+
+            BukkitTask Four = new Four(this).runTaskLater(main,20L);
+            BukkitTask Three = new Three(this).runTaskLater(main,40L);
+            BukkitTask Two = new Two(this).runTaskLater(main,60L);
+            BukkitTask One = new One(this).runTaskLater(main,80L);
 
             BukkitTask Start = new Start(this).runTaskLater(main,100L);
 

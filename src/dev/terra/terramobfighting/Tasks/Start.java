@@ -33,7 +33,7 @@ public class Start extends BukkitRunnable {
     @Override
     public void run() {
 
-        Location location = new Location(Bukkit.getWorld("world"), 0, 100, 0);
+        Location location = new Location(Bukkit.getWorld("world"), 28, 12, 152);
         for (Player player : Bukkit.getServer().getOnlinePlayers()) {
 
             player.teleport(location);

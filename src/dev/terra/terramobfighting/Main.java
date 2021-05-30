@@ -1,5 +1,6 @@
 package dev.terra.terramobfighting;
 
+import dev.terra.terramobfighting.commands.GUICommand;
 import dev.terra.terramobfighting.events.PlayerJoin;
 import dev.terra.terramobfighting.events.SpawnMobs;
 import org.bukkit.ChatColor;
@@ -13,6 +14,7 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new PlayerJoin(),this);
         getServer().getPluginManager().registerEvents(new SpawnMobs(),this);
 
+        getCommand("gui").setExecutor(new GUICommand());
 
         System.out.println(ChatColor.GREEN +  "MobFighting has started");
 

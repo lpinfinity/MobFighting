@@ -5,32 +5,26 @@ import dev.terra.terramobfighting.events.PlayerJoin;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
-import org.bukkit.World;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
-import org.bukkit.plugin.Plugin;
-import org.bukkit.scheduler.BukkitRunnable;
-import org.bukkit.scheduler.BukkitTask;
 
 import java.util.Random;
 
-public class Start extends BukkitRunnable {
-
-    PlayerJoin plugin;
-    Main main;
+public class Start extends PlayerJoin {
 
     Boolean test = true;
-
-    public Start(PlayerJoin plugin) {
-        this.plugin = plugin;
-    }
 
     public Location[] locations = new Location[8];
 
     private int loop = 0;
 
-    @Override
+    Main main;
+
+    public Start(Main main) {
+        this.main = main;
+    }
+
     public void run() {
 
         Location location = new Location(Bukkit.getWorld("world"), 28, 12, 152);

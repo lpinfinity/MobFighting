@@ -14,17 +14,12 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitTask;
 
-public class PlayerJoin implements Listener {
-
-    private final Main main;
-
-    public PlayerJoin(Main main) {
-        this.main = main;
-    }
+public class PlayerJoin extends Main implements Listener {
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
 
+        Start start = new Start(this);
 
         Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "tp " + '"' + event.getPlayer().getName() + '"' + " " + Bukkit.getServer().getWorld("world").getSpawnLocation().getX() + " " + Bukkit.getServer().getWorld("world").getSpawnLocation().getY() + " " + Bukkit.getServer().getWorld("world").getSpawnLocation().getZ());
 
@@ -33,36 +28,42 @@ public class PlayerJoin implements Listener {
             Bukkit.getServer().broadcastMessage(ChatColor.GREEN + "Mob Fighting Round one Starting in 5 seconds");
 
 
-            Bukkit.getScheduler().scheduleSyncDelayedTask(main, new Runnable() {
+            Bukkit.getScheduler().scheduleSyncDelayedTask(this, new Runnable() {
                 @Override
                 public void run() {
                     Bukkit.broadcastMessage(ChatColor.GREEN +  "Mob Fighting Round one Starting in 4 seconds");
                 }
             }, 20L);
 
-            Bukkit.getScheduler().scheduleSyncDelayedTask(main, new Runnable() {
+            Bukkit.getScheduler().scheduleSyncDelayedTask(this, new Runnable() {
                 @Override
                 public void run() {
                     Bukkit.broadcastMessage(ChatColor.GREEN + "Mob Fighting Round one Starting in 3 seconds");
                 }
             }, 40L);
 
-            Bukkit.getScheduler().scheduleSyncDelayedTask(main, new Runnable() {
+            Bukkit.getScheduler().scheduleSyncDelayedTask(this, new Runnable() {
                 @Override
                 public void run() {
                     Bukkit.broadcastMessage(ChatColor.GREEN + "Mob Fighting Round one Starting in 2 seconds");
                 }
             }, 60L);
 
-            Bukkit.getScheduler().scheduleSyncDelayedTask(main, new Runnable() {
+            Bukkit.getScheduler().scheduleSyncDelayedTask(this, new Runnable() {
                 @Override
                 public void run() {
                     Bukkit.broadcastMessage(ChatColor.GREEN + "Mob Fighting Round one Starting in 1 seconds");
                 }
             }, 80L);
 
+            Bukkit.getScheduler().scheduleSyncDelayedTask(this, new Runnable() {
+                @Override
+                public void run() {
+                    start.run();
+                }
+            }, 100L);
 
-            BukkitTask Start = new Start(this).runTaskLater(main,100L);
+            //BukkitTask Start = new Start().runTaskLater(this,100L);
 
         }
 

@@ -4,6 +4,7 @@ import dev.terra.terramobfighting.events.PlayerJoin;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
+import org.bukkit.World;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
@@ -33,6 +34,7 @@ public class Start extends BukkitRunnable {
             player.teleport(location);
 
         }
+
 
         Location location0 = new Location(Bukkit.getWorld("world"), -5, 100, 3);
         Location location1 = new Location(Bukkit.getWorld("world"), 5, 100, 4);
@@ -69,7 +71,7 @@ public class Start extends BukkitRunnable {
             Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) plugin, new Runnable() {
                 @Override
                 public void run() {
-                    Bukkit.broadcastMessage("hello");
+                    Bukkit.broadcastMessage("HEllO");
                 }
             }, 20L);
 

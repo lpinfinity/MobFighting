@@ -11,11 +11,13 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitTask;
 
 public class PlayerJoin implements Listener {
 
     private final Main main;
+    PlayerJoin plugin;
 
     public PlayerJoin(Main main) {
         this.main = main;
@@ -24,16 +26,46 @@ public class PlayerJoin implements Listener {
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
 
+
         Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "tp " + '"' + event.getPlayer().getName() + '"' + " " + Bukkit.getServer().getWorld("world").getSpawnLocation().getX() + " " + Bukkit.getServer().getWorld("world").getSpawnLocation().getY() + " " + Bukkit.getServer().getWorld("world").getSpawnLocation().getZ());
 
         if(Bukkit.getServer().getOnlinePlayers().size() == 2) {
 
             Bukkit.getServer().broadcastMessage(ChatColor.GREEN + "Mob Fighting Round one Starting in 5 seconds");
 
-            BukkitTask Four = new Four(this).runTaskLater(main,20L);
-            BukkitTask Three = new Three(this).runTaskLater(main,40L);
-            BukkitTask Two = new Two(this).runTaskLater(main,60L);
-            BukkitTask One = new One(this).runTaskLater(main,80L);
+
+            Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) plugin, new Runnable() {
+                @Override
+                public void run() {
+                    Bukkit.broadcastMessage("Mob Fighting Round one Starting in 4 seconds");
+                }
+            }, 20L);
+
+            Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) plugin, new Runnable() {
+                @Override
+                public void run() {
+                    Bukkit.broadcastMessage("Mob Fighting Round one Starting in 3 seconds");
+                }
+            }, 40L);
+
+            Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) plugin, new Runnable() {
+                @Override
+                public void run() {
+                    Bukkit.broadcastMessage("Mob Fighting Round one Starting in 2 seconds");
+                }
+            }, 60L);
+
+            Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) plugin, new Runnable() {
+                @Override
+                public void run() {
+                    Bukkit.broadcastMessage("Mob Fighting Round one Starting in 1 seconds");
+                }
+            }, 80L);
+
+            //BukkitTask Four = new Four(this).runTaskLater(main,20L);
+            //BukkitTask Three = new Three(this).runTaskLater(main,40L);
+            //BukkitTask Two = new Two(this).runTaskLater(main,60L);
+            //BukkitTask One = new One(this).runTaskLater(main,80L);
 
             BukkitTask Start = new Start(this).runTaskLater(main,100L);
 

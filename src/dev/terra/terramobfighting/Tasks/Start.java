@@ -11,6 +11,7 @@ import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitRunnable;
+import org.bukkit.scheduler.BukkitTask;
 
 import java.util.Random;
 
@@ -68,17 +69,20 @@ public class Start extends BukkitRunnable {
 
         long amount = Bukkit.getServer().getWorld("world").getLivingEntities().stream().map(LivingEntity::getCustomName).count();
 
-        while(test) {
-            if(String.valueOf(amount) == "0") {
-                Bukkit.getScheduler().scheduleSyncDelayedTask(main, new Runnable() {
-                    @Override
-                    public void run() {
-                        Bukkit.broadcastMessage("HEllO");
-                    }
-                }, 20L);
-                test = false;
+        Bukkit.getScheduler().scheduleSyncRepeatingTask(main, new Runnable() {
+            @Override
+            public void run() {
+                if(String.valueOf(amount) == "0") {
+                    Bukkit.getScheduler().scheduleSyncDelayedTask(main, new Runnable() {
+                        @Override
+                        public void run() {
+                            Bukkit.broadcastMessage("HEllO");
+                        }
+                    }, 20L);
+                    test = false;
+                }
             }
-        }
+        }, 20L, 999999999999L);
 
     }
 

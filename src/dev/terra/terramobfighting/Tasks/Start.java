@@ -1,14 +1,14 @@
 package dev.terra.terramobfighting.Tasks;
 
-import dev.terra.terramobfighting.Main;
 import dev.terra.terramobfighting.events.PlayerJoin;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitRunnable;
+
+import java.util.Random;
 
 public class Start extends BukkitRunnable {
 
@@ -17,6 +17,10 @@ public class Start extends BukkitRunnable {
     public Start(PlayerJoin plugin) {
         this.plugin = plugin;
     }
+
+    public Location[] locations = new Location[4];
+
+    private int loop = 0;
 
     @Override
     public void run() {
@@ -28,22 +32,35 @@ public class Start extends BukkitRunnable {
 
         }
 
-        Bukkit.getServer().broadcastMessage(ChatColor.GREEN + "Spawning Zombies!");
         Location location1 = new Location(Bukkit.getWorld("world"), -5, 100, 3);
-        location1.getWorld().spawnEntity(location1, EntityType.ZOMBIE);
-
-        Bukkit.getServer().broadcastMessage(ChatColor.GREEN + "Spawning Zombies!");
         Location location2 = new Location(Bukkit.getWorld("world"), 5, 100, 4);
-        location2.getWorld().spawnEntity(location2, EntityType.ZOMBIE);
-
-        Bukkit.getServer().broadcastMessage(ChatColor.GREEN + "Spawning Zombies!");
         Location location3 = new Location(Bukkit.getWorld("world"), -9, 100, -8);
-        location3.getWorld().spawnEntity(location3, EntityType.ZOMBIE);
+        Location location4 = new Location(Bukkit.getWorld("world"), 3, 100, -5);
+
+        locations[1] = location1;
+        locations[2] = location2;
+        locations[3] = location3;
+        locations[4] = location4;
+
+
 
         Bukkit.getServer().broadcastMessage(ChatColor.GREEN + "Spawning Zombies!");
-        Location location4 = new Location(Bukkit.getWorld("world"), 3, 100, -5);
-        location4.getWorld().spawnEntity(location4, EntityType.ZOMBIE);
 
+        SpawnZombies(4);
+
+    }
+
+    private void SpawnZombies(int amount) {
+        if(loop < amount){
+            Random rand = new Random();
+            int upper = locations.length;
+            int spawnLocation = rand.nextInt(upper);
+            locations[spawnLocation].getWorld().spawnEntity(locations[spawnLocation], EntityType.ZOMBIE);
+            loop = loop + 1;
+            SpawnZombies(amount);
+        }else{
+            loop = 0;
+        }
     }
 
 }

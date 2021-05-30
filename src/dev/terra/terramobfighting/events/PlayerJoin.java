@@ -36,35 +36,31 @@ public class PlayerJoin implements Listener {
             Bukkit.getScheduler().scheduleSyncDelayedTask(main, new Runnable() {
                 @Override
                 public void run() {
-                    Bukkit.broadcastMessage("Mob Fighting Round one Starting in 4 seconds");
+                    Bukkit.broadcastMessage(ChatColor.GREEN +  "Mob Fighting Round one Starting in 4 seconds");
                 }
             }, 20L);
 
             Bukkit.getScheduler().scheduleSyncDelayedTask(main, new Runnable() {
                 @Override
                 public void run() {
-                    Bukkit.broadcastMessage("Mob Fighting Round one Starting in 3 seconds");
+                    Bukkit.broadcastMessage(ChatColor.GREEN + "Mob Fighting Round one Starting in 3 seconds");
                 }
             }, 40L);
 
             Bukkit.getScheduler().scheduleSyncDelayedTask(main, new Runnable() {
                 @Override
                 public void run() {
-                    Bukkit.broadcastMessage("Mob Fighting Round one Starting in 2 seconds");
+                    Bukkit.broadcastMessage(ChatColor.GREEN + "Mob Fighting Round one Starting in 2 seconds");
                 }
             }, 60L);
 
             Bukkit.getScheduler().scheduleSyncDelayedTask(main, new Runnable() {
                 @Override
                 public void run() {
-                    Bukkit.broadcastMessage("Mob Fighting Round one Starting in 1 seconds");
+                    Bukkit.broadcastMessage(ChatColor.GREEN + "Mob Fighting Round one Starting in 1 seconds");
                 }
             }, 80L);
 
-            //BukkitTask Four = new Four(this).runTaskLater(main,20L);
-            //BukkitTask Three = new Three(this).runTaskLater(main,40L);
-            //BukkitTask Two = new Two(this).runTaskLater(main,60L);
-            //BukkitTask One = new One(this).runTaskLater(main,80L);
 
             BukkitTask Start = new Start(this).runTaskLater(main,100L);
 

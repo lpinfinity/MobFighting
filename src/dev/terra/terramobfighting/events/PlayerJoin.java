@@ -16,11 +16,16 @@ import org.bukkit.scheduler.BukkitTask;
 
 public class PlayerJoin implements Listener {
 
+    Main main;
+    public PlayerJoin(Main main) {
+        this.main = main;
+    }
+    Start start = new Start(main);
+
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
 
-        Main main = new Main();
-        Start start = new Start(main);
+
 
         Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "tp " + '"' + event.getPlayer().getName() + '"' + " " + Bukkit.getServer().getWorld("world").getSpawnLocation().getX() + " " + Bukkit.getServer().getWorld("world").getSpawnLocation().getY() + " " + Bukkit.getServer().getWorld("world").getSpawnLocation().getZ());
 

@@ -15,7 +15,7 @@ public class Main extends JavaPlugin {
     @Override
     public void onEnable() {
 
-        getServer().getPluginManager().registerEvents(new PlayerJoin(),this);
+        getServer().getPluginManager().registerEvents(new PlayerJoin(this),this);
         getServer().getPluginManager().registerEvents(new SpawnMobs(),this);
         getServer().getPluginManager().registerEvents(new PlayerClick(), this);
 

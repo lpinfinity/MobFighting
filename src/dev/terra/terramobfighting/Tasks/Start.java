@@ -22,6 +22,7 @@ public class Start extends PlayerJoin {
     Main main;
 
     public Start(Main main) {
+        super(main);
         this.main = main;
     }
 

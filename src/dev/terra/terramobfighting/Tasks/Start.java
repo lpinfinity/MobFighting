@@ -32,15 +32,15 @@ public class Start extends BukkitRunnable {
 
         }
 
-        Location location1 = new Location(Bukkit.getWorld("world"), -5, 100, 3);
-        Location location2 = new Location(Bukkit.getWorld("world"), 5, 100, 4);
-        Location location3 = new Location(Bukkit.getWorld("world"), -9, 100, -8);
-        Location location4 = new Location(Bukkit.getWorld("world"), 3, 100, -5);
+        Location location0 = new Location(Bukkit.getWorld("world"), -5, 100, 3);
+        Location location1 = new Location(Bukkit.getWorld("world"), 5, 100, 4);
+        Location location2 = new Location(Bukkit.getWorld("world"), -9, 100, -8);
+        Location location3 = new Location(Bukkit.getWorld("world"), 3, 100, -5);
 
+        locations[0] = location0;
         locations[1] = location1;
         locations[2] = location2;
         locations[3] = location3;
-        locations[4] = location4;
 
 
 

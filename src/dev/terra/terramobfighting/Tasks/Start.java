@@ -64,7 +64,7 @@ public class Start extends BukkitRunnable {
             Random rand = new Random();
             int upper = locations.length;
             int spawnLocation = rand.nextInt(upper);
-            locations[spawnLocation].getWorld().spawnEntity(locations[spawnLocation], EntityType.ZOMBIE);
+            locations[spawnLocation].getWorld().spawnEntity(locations[spawnLocation], EntityType.ZOMBIE).setCustomName("zombie");
             loop = loop + 1;
             SpawnZombies(amount);
         }else{

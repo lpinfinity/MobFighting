@@ -1,19 +1,20 @@
 package dev.terra.terramobfighting.Tasks;
 
-
+import dev.terra.terramobfighting.Main;
 import org.bukkit.scheduler.BukkitRunnable;
 
-class Start extends BukkitRunnable {
+public class Start extends BukkitRunnable {
 
-    Task
+    Main plugin;
 
-
-
+    public Start(Main plugin) {
+        this.plugin = plugin;
+    }
 
     @Override
     public void run() {
 
-        System.out.println("TASK HAS BEEN RUN!!");
+        System.out.println("Task has Been Run!!");
 
     }
 }

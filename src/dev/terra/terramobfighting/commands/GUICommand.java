@@ -56,7 +56,7 @@ public class GUICommand implements CommandExecutor {
             trophyMeta.setLore(trophyLore);
             trophy.setItemMeta(trophyMeta);
 
-            ItemStack[] menuItems = {kill, saturate, sword};
+            ItemStack[] menuItems = {kill, saturate, sword, trophy};
             gui.setContents(menuItems);
 
             player.openInventory(gui);

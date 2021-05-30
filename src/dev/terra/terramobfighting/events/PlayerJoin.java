@@ -16,8 +16,9 @@ import org.bukkit.scheduler.BukkitTask;
 public class PlayerJoin implements Listener {
 
     private final Main main;
+
     public PlayerJoin(Main main) {
-            this.main = main;
+        this.main = main;
     }
 
     @EventHandler
@@ -28,8 +29,6 @@ public class PlayerJoin implements Listener {
         if(Bukkit.getServer().getOnlinePlayers().size() == 2) {
 
             Bukkit.getServer().broadcastMessage(ChatColor.GREEN + "Mob Fighting Round one Starting in 5 seconds");
-
-
 
             BukkitTask Four = new Four(this).runTaskLater(main,20L);
             BukkitTask Three = new Three(this).runTaskLater(main,40L);

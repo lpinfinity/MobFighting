@@ -13,14 +13,12 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.scheduler.BukkitTask;
 
-
-
 public class PlayerJoin implements Listener {
 
-        private final Main main;
-        public PlayerJoin(Main main) {
+    private final Main main;
+    public PlayerJoin(Main main) {
             this.main = main;
-        }
+    }
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
@@ -38,17 +36,11 @@ public class PlayerJoin implements Listener {
 
             BukkitTask Start = new Start(this).runTaskLater(main,100L);
 
-            }
-
-
-
-
-
-
-
         }
 
     }
+
+}
 
 
 

@@ -26,6 +26,7 @@ public class GUICommand implements CommandExecutor {
             ItemStack kill = new ItemStack(Material.TNT);
             ItemStack saturate = new ItemStack(Material.COOKED_BEEF);
             ItemStack sword = new ItemStack(Material.DIAMOND_SWORD);
+            ItemStack trophy = new ItemStack(Material.YELLOW_STAINED_GLASS);
 
             ItemMeta killMeta = kill.getItemMeta();
             killMeta.setDisplayName(ChatColor.RED + "Kill Yourself");
@@ -47,6 +48,13 @@ public class GUICommand implements CommandExecutor {
             swordLore.add(ChatColor.WHITE + "Who doesn't like free stuff?");
             swordMeta.setLore(swordLore);
             sword.setItemMeta(swordMeta);
+
+            ItemMeta trophyMeta = trophy.getItemMeta();
+            trophyMeta.setDisplayName(ChatColor.YELLOW + "Test Trophy");
+            ArrayList<String> trophyLore = new ArrayList<>();
+            trophyLore.add(ChatColor.WHITE + "Test Trophy");
+            trophyMeta.setLore(trophyLore);
+            trophy.setItemMeta(trophyMeta);
 
             ItemStack[] menuItems = {kill, saturate, sword};
             gui.setContents(menuItems);

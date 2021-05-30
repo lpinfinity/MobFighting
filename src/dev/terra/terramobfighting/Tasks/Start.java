@@ -18,7 +18,7 @@ public class Start extends BukkitRunnable {
         this.plugin = plugin;
     }
 
-    public Location[] locations = new Location[4];
+    public Location[] locations = new Location[8];
 
     private int loop = 0;
 
@@ -32,15 +32,24 @@ public class Start extends BukkitRunnable {
 
         }
 
-        Location location1 = new Location(Bukkit.getWorld("world"), -5, 100, 3);
-        Location location2 = new Location(Bukkit.getWorld("world"), 5, 100, 4);
-        Location location3 = new Location(Bukkit.getWorld("world"), -9, 100, -8);
+        Location location0 = new Location(Bukkit.getWorld("world"), -5, 100, 3);
+        Location location1 = new Location(Bukkit.getWorld("world"), 5, 100, 4);
+        Location location2 = new Location(Bukkit.getWorld("world"), -9, 100, -8);
+        Location location3 = new Location(Bukkit.getWorld("world"), 3, 100, -5);
         Location location4 = new Location(Bukkit.getWorld("world"), 3, 100, -5);
+        Location location5 = new Location(Bukkit.getWorld("world"), 4, 100, 5);
+        Location location6 = new Location(Bukkit.getWorld("world"), 8, 100, 9);
+        Location location7 = new Location(Bukkit.getWorld("world"), -9, 100, 8);
 
+
+        locations[0] = location0;
         locations[1] = location1;
         locations[2] = location2;
         locations[3] = location3;
         locations[4] = location4;
+        locations[5] = location5;
+        locations[6] = location6;
+        locations[7] = location7;
 
 
 

@@ -17,6 +17,11 @@ import org.bukkit.scheduler.BukkitTask;
 
 public class PlayerJoin implements Listener {
 
+        private final Main main;
+        public PlayerJoin(Main main) {
+            this.main = main;
+        }
+
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
 
@@ -26,7 +31,7 @@ public class PlayerJoin implements Listener {
 
             Bukkit.getServer().broadcastMessage(ChatColor.GREEN + "Mob Fighting Round one Starting!");
 
-            BukkitTask Start = new Start(this).runTaskLater(this,100L);
+            BukkitTask Start = new Start(this).runTaskLater(main,100L);
 
             }
 

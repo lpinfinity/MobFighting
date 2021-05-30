@@ -5,8 +5,10 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.entity.EntityType;
+import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
+import org.bukkit.scheduler.BukkitTask;
 
 import java.util.Random;
 
@@ -56,6 +58,15 @@ public class Start extends BukkitRunnable {
         Bukkit.getServer().broadcastMessage(ChatColor.GREEN + "Spawning Zombies!");
 
         SpawnZombies(4);
+
+
+        long amount = Bukkit.getServer().getWorld("world").getLivingEntities().stream().map(LivingEntity::getCustomName).count();
+
+        if (String.valueOf(amount) == "2") {
+
+            BukkitTask RoundTwo = new RoundTwo(this).runTaskLater(this, 20L);
+
+        }
 
     }
 

@@ -1,5 +1,6 @@
 package dev.terra.terramobfighting.Tasks;
 
+import dev.terra.terramobfighting.Main;
 import dev.terra.terramobfighting.events.PlayerJoin;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -16,6 +17,7 @@ import java.util.Random;
 public class Start extends BukkitRunnable {
 
     PlayerJoin plugin;
+    Main main;
 
     public Start(PlayerJoin plugin) {
         this.plugin = plugin;
@@ -68,7 +70,7 @@ public class Start extends BukkitRunnable {
 
             //BukkitTask RoundTwo = new RoundTwo(this).runTaskLater(, 20L);
 
-            Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) plugin, new Runnable() {
+            Bukkit.getScheduler().scheduleSyncDelayedTask(main, new Runnable() {
                 @Override
                 public void run() {
                     Bukkit.broadcastMessage("HEllO");

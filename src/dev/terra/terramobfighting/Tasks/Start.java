@@ -15,7 +15,7 @@ public class Start extends PlayerJoin {
 
     Boolean test = true;
 
-    public Location[] locations = new Location[22];
+    public Location[] locations = new Location[23];
 
     private int loop = 0;
 

@@ -15,7 +15,7 @@ public class Start extends PlayerJoin {
 
     Boolean test = true;
 
-    public Location[] locations = new Location[8];
+    public Location[] locations = new Location[22];
 
     private int loop = 0;
 
@@ -88,7 +88,7 @@ public class Start extends PlayerJoin {
 
         Bukkit.getServer().broadcastMessage(ChatColor.GREEN + "Spawning Zombies!");
 
-        SpawnZombies(8);
+        SpawnZombies(23);
 
 
         long amount = Bukkit.getServer().getWorld("world").getLivingEntities().stream().map(LivingEntity::getCustomName).count();

@@ -22,7 +22,7 @@ public class Main extends JavaPlugin {
 
         System.out.println(ChatColor.GREEN +  "MobFighting has started");
 
-        BukkitTask Start = new Start(this).runTaskLater(this,100L);
+        //BukkitTask Start = new Start(this).runTaskLater(this,100L);
 
     }
 

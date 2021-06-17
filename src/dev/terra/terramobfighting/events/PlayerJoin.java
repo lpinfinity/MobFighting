@@ -21,8 +21,8 @@ public class PlayerJoin implements Listener {
         this.main = main;
     }
     Start start;
-
     @EventHandler
+
     public void onPlayerJoin(PlayerJoinEvent event) {
 
         start = new Start(main);
